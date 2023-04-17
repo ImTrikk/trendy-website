@@ -167,3 +167,5 @@ app.get("/signup", (req, res) => {
 app.use(express.static("Public"));
 
 app.listen(1000, () => console.log("server running on port 1000"));
+
+module.exports = app;
