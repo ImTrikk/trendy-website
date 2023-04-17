@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trendy Signup Account</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-----Sign Up Forms Popup---->
+    <div class="signupform" id="signupform">
+      <a href="/"><div class="closeButtonsignup">&times;</div></a>
+      <div class="left--panel">
+        <h2>Create <span class="stroke">TRENDY</span> Account</h2>
+        <h5>Create an account to access features on TRENDY</h5>
+        <div class="signup--elements">
+          <form action="/signup" method="POST" enctype="multipart/form-data" autocomplete="off">
+            <p class="messageIndicator" id="messageIndicator"></p>
+            <input
+              type="text"
+              name="username"
+              id="usernameSignup"
+              placeholder="Enter username"
+            />
+            <input
+              type="text"
+              name="email"
+              id="emailSignup"
+              placeholder="Enter email"
+            />
+            <input
+              type="password"
+              name="password"
+              id="passwordSignup"
+              placeholder="Enter password"
+            />
+            <input
+              type="password"
+              name="cpassword"
+              id="cpassword"
+              placeholder="Confirm password"
+            />
+            <div class="create--account">
+              <button type="submit" class="createBTN">Create account</button>
+            </div>
+          </form>
+        </div>
+        <div class="agreements">
+          <input type="checkbox" />
+          <label for="license--agreements">
+            I agree with the terms and license agreement
+          </label>
+        </div>
+      </div>
+      <div class="right--panel">
+        <div class="carousel-model">
+          <img src="" alt="" />
+        </div>
+      </div>
+    </div>
+    <script>
+      const form = document.querySelector("form");
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        const username = formData.get("username");
+        const email = formData.get("email");
+        const password = formData.get("password");
+
+        const response = await fetch("/signup", {
+          method: "POST",
+          body: JSON.stringify({ username, email, password }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+       const data = await response.json();
+        document.getElementById("messageIndicator").textContent = data.message;
+
+        const messageIndicator = document.getElementById("messageIndicator");
+        if (data.success) {
+          messageIndicator.classList.add("success");
+          setTimeout(() => { 
+            window.location.href = data.redirect;
+          }, 5000); // 5 seconds delay
+        } else {
+          messageIndicator.classList.add("error");
+           setTimeout(() => {
+           messageIndicator.textContent = "";
+          }, 5000); 
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">  
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css"> 
+</head>
+
+<body>
+  <!----Popup Login----->
+  <div class="modal" id="modal">
+    <a href="/"><button class="close-button">&times;</button></a>
+    <!--Left side loginform-->
+    <div class="left_login">
+      <div class="side__text">
+        <h2>
+          Unleash your <br>
+          Inner Fashion <br>
+          <span class="trendy_stroke">TRENDY.</span>
+        </h2>
+        <p class="description">
+          Lorem ipsum dolor sit amet consectetur. Vel viverra ipsum molestie
+          ut urna morbi nam.
+        </p>
+        <button class="down">DOWNLOAD APP NOW</button>
+      </div>
+    </div>
+    <!--Right side loginform-->
+    <div class="right__login">
+        <div class="form">
+          <form action="/login" method="POST">
+            <div id="loginMessage">
+            <% if (error) { %>
+              <p><%= error %></p>
+            <% } %>
+          </div>
+            <h2>Login</h2>
+            <div class="form--element">
+              <label for="username" id="username">Username</label>
+                <input type="text" name="username" id="usernameLogin" placeholder="Enter username" autocomplete="off">
+            </div>
+            <div class="form--element">
+              <label for="password">Password</label>
+              <input type="password" name="password" id="passwordLogin" placeholder="Enter Password">
+            </div>
+            <div class="form-element--sub">
+              <div class="rememberBox">
+                <input type="checkbox">
+                <label for="checkboxbtn">Remember me</label>
+              </div>
+              <div class="forgotpass">
+                <a href="#" class="forgotPassword">Forgot Password?</a>
+              </div>
+              <div class="text__login__social">
+                <div class="leftImg">
+                  <img class="leftRectangle" src="images_login_form/Rectangle 75.png" alt="">
+                </div>
+                <div class="centerImg">
+                  <p class="login__using">or</p>
+                </div>
+                <div class="rightImg">
+                  <img class="rightRectangle" src="images_login_form/Rectangle 75.png" alt="">
+                </div>
+              </div>
+              <div class="login__using__diff">
+               <div class="socials__container">
+                  <div class="fb">
+                    <img src="images_login_form/bi_facebook.png" alt="">
+                    <label for="imgFB">Facebook</label>
+                  </div>
+                  <div class="google">
+                    <img src="images_login_form/ant-design_google-outlined.png" alt="">
+                    <label for="imgGoogle">Google</label>
+                  </div>
+                  <div class="apple">
+                    <img src="images_login_form/bi_apple.png" alt="">
+                    <label for="imgApple">Apple</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form--element--btn1">
+                <div class="loginbtn">
+                  <button type="submit" id="loginAccountBTN">Login</button>
+                </div>
+              </div>
+            </div>  
+          </form>
+          <div class="form--element--btn2">
+            <div class="signupbtn">
+              <a href="/Signup"><button>Signup</button></a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>

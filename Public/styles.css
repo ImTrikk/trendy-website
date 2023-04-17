@@ -1,0 +1,734 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  scroll-behavior: smooth;
+  font-family: "Lato", sans-serif;
+}
+
+/*   Navigation Bar     */
+
+header {
+  width: 100%;
+  height: 65px;
+  margin: auto;
+  text-align: center;
+  position: absolute;
+  margin: auto;
+  display: flex;
+}
+.navbar {
+  width: 100%;
+  height: 65px;
+  margin: auto;
+  padding-right: 65px;
+  padding-left: 65px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo {
+  margin: auto;
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: "Frank Ruhl Libre", serif;
+  text-align: center;
+}
+.navs {
+  display: flex;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.navs ul li {
+  margin: auto;
+  display: inline-flex;
+  position: relative;
+  padding: 10px;
+  font-size: 14px;
+}
+form {
+  margin: none;
+}
+input[type="search"] {
+  border: none;
+  background: transparent;
+  margin: 0;
+  padding: 7px 10px;
+  font-size: 14px;
+  color: inherit;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.searchButton[type="submit"] {
+  text-indent: -999px;
+  overflow: hidden;
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+    no-repeat center;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.login__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.userBar {
+  position: relative;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-large {
+  padding-right: 5px;
+  font-size: 24px;
+}
+
+.login__buttons h1 {
+  font-size: 16px;
+}
+
+.text__container h1 {
+  font-size: 16px;
+}
+
+.signup button {
+  width: 85px;
+  height: 35px;
+  background-color: transparent;
+  border: none;
+}
+
+.signup a {
+  text-decoration: none;
+  color: black;
+}
+.login button {
+  width: 85px;
+  height: 35px;
+  color: white;
+  border-radius: 5px;
+  background-color: black;
+}
+
+.login button:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1, 1);
+  transition: 800ms ease-in-out;
+}
+
+.logout{
+  padding-right: 20px;
+}
+
+#logout {
+  width: 85px;
+  height: 35px;
+  color: white;
+  border-radius: 5px;
+  background-color: black;
+}
+
+/*    Main Signup Form    */
+.signupform {
+  width: 1100px;
+  height: 600px;
+  background-color: transparent;
+  margin: auto;
+  position: fixed;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  z-index: 13;
+  transform: translate(-50%, -50%) scale(1);
+  border-radius: 15px;
+  box-shadow: 0px 2px 5px 5px rgba(0, 0, 0, 0.1);
+  transition: 200ms ease-in-out;
+}
+
+.signupform.active {
+  transform: translate(-50%, -50%) scale(1);
+  transition: 200ms ease-in-out;
+}
+
+.left--panel {
+  width: 750px;
+  height: 600px;
+  position: relative;
+  background-image: url(images_login_form/back_ground_form.png);
+  background-position: center;
+  background-repeat: no-repeat; /* prevent the image from repeating */
+  background-size: cover;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.closeButtonsignup {
+  position: absolute;
+  font-size: 20px;
+  z-index: 10;
+  text-decoration: none;
+  color: black;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  outline: none;
+  border: none;
+  background: none;
+  height: 30px;
+  text-align: center;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.left--panel h2,
+h5 {
+  text-align: center;
+  margin: auto;
+}
+
+.left--panel h2 {
+  font-size: 50px;
+  font-family: "Frank Ruhl Libre", serif;
+  margin-top: 30px;
+}
+
+.left--panel h5 {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.signup--elements {
+  margin-top: 20px;
+}
+
+.success {
+  color: white;
+  background-color: green !important;
+}
+
+.error {
+  background-color: red !important;
+}
+
+.messageIndicator {
+  margin: auto;
+  font-size: 20px;
+  width: 50%;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  background-color: red;
+}
+
+.signup--elements input[type="text"],
+input[type="email"] {
+  width: 370px;
+  display: block;
+  padding: 0px 5%;
+  border-radius: 5px;
+  height: 45px;
+  margin: auto;
+}
+
+.signup--elements input[type="password"],
+input[type="cpassword"] {
+  width: 370px;
+  display: block;
+  padding: 0px 5%;
+  border-radius: 5px;
+  height: 45px;
+  margin: auto;
+}
+
+.signup--elements input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="cpassword"] {
+  margin-top: 20px;
+}
+
+.signup--elements input[type="password"],
+input[type="cpassword"] {
+  margin-top: 20px;
+}
+
+.create--account {
+  margin: auto;
+  text-align: center;
+}
+.createBTN {
+  width: 370px;
+  margin-top: 20px;
+  height: 45px;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  background-color: black;
+}
+
+.agreements {
+  margin: auto;
+  text-align: center;
+  padding-top: 10px;
+  padding-right: 40px;
+}
+
+.stroke {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 60px;
+  color: transparent;
+  -webkit-text-stroke: 1px black;
+}
+
+.right--panel {
+  width: 400px;
+  height: 600px;
+  position: relative;
+  display: block;
+  background-image: url(images_signup_form/Component\ 1.png);
+  background-position: center;
+  background-repeat: no-repeat; /* prevent the image from repeating */
+  background-size: cover;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/*    Main Login Form   */
+
+.modal {
+  width: 1100px;
+  height: 600px;
+  background-color: white;
+  margin: auto;
+  position: fixed;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  z-index: 9;
+  transform: translate(-50%, -50%) scale(1);
+  border-radius: 15px;
+  box-shadow: 0px 2px 5px 5px rgba(0, 0, 0, 0.1);
+  transition: 200ms ease-in-out;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#overlay {
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 200ms ease-in-out;
+  z-index: 3;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.modal .close-button {
+  position: absolute;
+  font-size: 20px;
+  z-index: 10;
+  top: 15px;
+  text-decoration: none;
+  right: 15px;
+  width: 30px;
+  outline: none;
+  border: none;
+  background: none;
+  height: 30px;
+  text-align: center;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+/*    Left side login form    */
+
+.left_login {
+  width: 750px;
+  height: 600px;
+  position: relative;
+  background-image: url(images_login_form/Background_model.png);
+  background-position: center;
+  background-repeat: no-repeat; /* prevent the image from repeating */
+  background-size: cover;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.side__text {
+  width: 500px;
+  margin: 0px 5%;
+  margin-top: 45px;
+  line-height: 75px;
+}
+
+.side__text h2 {
+  font-size: 70px;
+  position: relative;
+  text-align: justify;
+  font-family: "Frank Ruhl Libre", serif;
+}
+
+.description {
+  width: 295px;
+  margin-top: 40px;
+  line-height: 30px;
+}
+
+.down {
+  margin-top: 65px;
+  width: 190px;
+  height: 40px;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.trendy_stroke {
+  font-size: 70px;
+  color: transparent;
+  -webkit-text-stroke: 1px black;
+  font-family: "Frank Ruhl Libre", serif;
+}
+
+/*    Right Login Form    */
+
+.right__login {
+  width: 400px;
+  height: 600px;
+  position: relative;
+  display: block;
+  background-color: transparent;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.form h2 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bolder;
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: bolder;
+}
+
+#loginMessage {
+  width: 70%;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin: auto;
+  background-color: red;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#loginMessage p {
+  color: white;
+}
+
+.form--element input[type="text"],
+input[type="password"] {
+  width: 280px;
+  display: block;
+  padding: 0px 5%;
+  border-radius: 5px;
+  height: 40px;
+  margin: auto;
+}
+
+.form--element label {
+  display: flex;
+  font-size: 13px;
+  padding: 10px 0px 5px;
+  margin-left: 50px;
+  margin-top: 5px;
+}
+
+.form-element--sub {
+  width: 100%;
+  display: flex;
+  margin-top: 12px;
+}
+.rememberBox {
+  display: inline-flex;
+}
+
+.rememberBox label {
+  padding-left: 5px;
+}
+
+.forgotpass {
+  display: inline-flex;
+  font-size: 12px;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.forgotpass a {
+  margin-right: 20px;
+}
+
+.text__login__social {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  margin: auto;
+  margin-top: 30px;
+  font-size: 12px;
+  padding: 10px;
+}
+
+.rightRectangle {
+  width: 130px;
+  padding-left: 12px;
+  height: 2px;
+}
+
+.leftRectangle {
+  width: 130px;
+  padding-right: 12px;
+  height: 2px;
+}
+
+.login__using__diff {
+  width: 100%;
+  position: absolute;
+  margin: auto;
+  margin-top: 85px;
+  display: flex;
+}
+
+.socials__container {
+  display: flex;
+  position: relative;
+  margin: auto;
+}
+
+.fb,
+.google,
+.apple {
+  display: flex;
+  align-items: center;
+  padding: 15px 10px 15px;
+}
+
+.form--element--sub {
+  width: 100%;
+  text-align: center;
+  margin-top: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.form-element--sub a {
+  margin-left: 90px;
+  color: black;
+  display: inline-flex;
+  text-decoration: none;
+}
+
+.form-element--sub input[type="checkbox"] {
+  margin-left: 55px;
+  padding-right: 5px;
+  text-align: center;
+}
+
+.form-element--sub label {
+  font-size: 12px;
+}
+
+.form--element--btn1 {
+  width: 100%;
+  text-align: center;
+  margin-top: 170px;
+  position: absolute;
+  font-size: 14px;
+}
+
+.form--element--btn2 {
+  width: 100%;
+  text-align: center;
+  margin-top: 220px;
+  position: absolute;
+  font-size: 14px;
+}
+
+.form--element--btn .signupbtn {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  position: absolute;
+  font-size: 14px;
+  margin-bottom: 1000px;
+}
+
+.loginbtn button {
+  width: 280px;
+  height: 40px;
+  font-size: 14px;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+}
+.signupbtn button {
+  font-size: 12px;
+  height: 40px;
+  width: 280px;
+  background-color: transparent;
+  border-radius: 5px;
+}
+.signupbtn a {
+  margin: 0;
+}
+/**   Hero Page   **/
+
+.hero--page {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box1 {
+  width: 550px;
+  height: 550px;
+}
+.box2 {
+  display: inline-flex;
+  width: 470px;
+  height: 550px;
+  background-color: none;
+}
+
+.text__container {
+  margin: auto;
+  position: absolute;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.text__container .tag__line {
+  font-size: 60px;
+  line-height: 75px;
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: bolder;
+}
+.tag__line .stroke {
+  color: transparent;
+  line-height: 75px;
+  font-family: "Frank Ruhl Libre", serif;
+  -webkit-text-stroke: 1px black;
+}
+
+.text__container .description {
+  width: 530px;
+  margin-top: 35px;
+  font-size: 60px;
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 30px;
+  font-family: "Lato", sans-serif;
+}
+
+.button__container1 {
+  display: flex;
+  padding-right: 20px;
+  padding-top: 50px;
+}
+
+.button__container1 .shop {
+  width: 150px;
+  height: 50px;
+  background-color: transparent;
+  color: black;
+  border-radius: 5px;
+}
+
+.button__container1 .download {
+  width: 200px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  margin-left: 30px;
+}
+
+.carousel__img {
+  margin-top: 20px;
+}
+
+.outline {
+  height: 450px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  margin-top: 10px;
+  position: absolute;
+}
+
+.background {
+  height: 450px;
+  margin-top: 45px;
+  margin-left: 45px;
+  z-index: 1;
+  position: absolute;
+}
+.model {
+  height: 450px;
+  margin-top: 45px;
+  z-index: 1;
+  margin-left: 100px;
+  position: absolute;
+}
+
+.explore {
+  margin: auto;
+  margin-top: 620px;
+}
+
+.explore,
+.exploreBTN {
+  width: 150px;
+  height: 40px;
+  color: black;
+  background-color: transparent;
+  border-radius: 5px;
+}

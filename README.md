@@ -1,2 +1,2 @@
 # trendy-website
-Fashion and ecommerce website
+Fashion style and ecommerce website

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trendy: Homepage</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo">TRENDY.</div>
+        <div class="navs">
+          <ul>
+            <li>Men</li>
+            <li>Women</li>
+            <li>Inspirations</li>
+            <li>Collection</li>
+            <li>Trends</li>
+          </ul>
+        </div>
+        <form>
+          <input type="search" placeholder="search..." />
+          <button class="searchButton" type="submit">Search</button>
+        </form>
+        <div class="login__buttons">
+          <% if (isLoggedIn) { %>
+          <div class="userBar">
+            <i class="bx bx-user-circle icon-large"></i>
+            <% if (username) { %>
+            <h1><%= username %></h1>
+            <% }%>
+          </div>
+          <div class="logout">
+            <form action="/logout" method="post">
+              <button id="logout">Logout</button>
+            </form>
+          </div>
+          <% } else { %>
+          <div class="signup">
+            <button><a href="/Signup">Signup</a></button>
+          </div>
+          <div class="login">
+            <a href="/Login"><button id="login">Login</button></a>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </header>
+    <!-----Hero Page-->
+    <section class="hero--page">
+      <div class="box1">
+        <div class="text__container" id="text__container">
+          <% if (username) { %>
+          <h1>Welcome, <%= username %>!</h1>
+          <% }%>
+          <h1 class="tag__line">
+            Find your
+            <span class="stroke">Fashion</span><br />
+            <span class="stroke" id="upper">Style</span>
+            only in <br />
+            TRENDY.
+          </h1>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit
+            nobis deleniti voluptatibusx eligendi quam repellendus soluta
+            blanditiis non sit laboriosam nemo quasi porro, nesciunt voluptatem
+            amet explicabo sunt ut omnis!
+          </p>
+          <div class="button__container1">
+            <div class="shop">
+              <button class="shop">Shop</button>
+            </div>
+            <div class="download_now">
+              <button class="download">DOWNLOAD APP NOW</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box2">
+        <div class="carousel__img">
+          <img class="outline" src="images_section1/outline.png" alt="" />
+          <img
+            class="background"
+            src="images_section1/background__picture.png"
+            alt=""
+          />
+          <img class="model" src="images_section1/model1.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+    <script
+      src="https://mediafiles.botpress.cloud/0325d837-f00c-4a97-ab14-e82881a051e4/webchat/config.js"
+      defer
+    ></script>
+  </body>
+</html>
